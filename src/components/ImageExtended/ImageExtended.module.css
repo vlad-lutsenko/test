@@ -1,3 +1,82 @@
 .modal {
+  position: relative;
+  padding: 30px 30px 32px 30px;
+  width: 619px;
+  height: 425px;
   background-color: white;
+  display: grid;
+  grid-template-columns: 331px 1fr;
+  column-gap: 14px;
+  grid-template-rows: 205px 1fr;
+  row-gap: 29px;
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #999999;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4997d0;
+
+  border-radius: 5px;
+}
+
+.bigImg {
+  width: 331px;
+  height: 205px;
+}
+
+.commentsList {
+  width: 210px;
+  list-style: none;
+}
+
+.commentsListItem {
+  margin-bottom: 20px;
+}
+
+.closeButton {
+  width: 18px;
+  height: 18px;
+  border: none;
+  outline: none;
+  background: transparent;
+  position: absolute;
+  font-size: 18px;
+  line-height: 18px;
+  right: 30px;
+  top: 30px;
+  transform: translate(50%, -50%);
+}
+
+.closeButton:hover {
+  color: #4997d0;
+}
+
+.name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #999999;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
 }

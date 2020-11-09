@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { addImageComment } from "../../fetchRequest";
-const InputForm = ({ imgId }) => {
+import styles from "./InputForm.module.css";
+
+const InputForm = ({ imgId, imageComments }) => {
   const [response, setResponse] = useState({ image_id: imgId });
 
   const changeHandler = (e) => {
@@ -10,26 +12,28 @@ const InputForm = ({ imgId }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(response);
     addImageComment(response);
+    imageComments.push(response);
     e.target.reset();
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={styles.form}>
       <input
         type="text"
         placeholder="Ваше имя"
         name="name"
         onChange={changeHandler}
+        required
       />
       <input
         type="text"
         name="description"
         onChange={changeHandler}
         placeholder="Ваш комментарий"
+        required
       />
-      <button>Оставить комментарий</button>
+      <button className={styles.submitButton}>Оставить комментарий</button>
     </form>
   );
 };

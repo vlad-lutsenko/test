@@ -4,6 +4,8 @@ import Loader from "./components/Loader/Loader";
 
 import { getAllImages } from "./fetchRequest";
 
+import styles from "./components/ImageGallery/ImageGallery.module.css";
+
 const App = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,10 +22,10 @@ const App = () => {
   });
 
   return (
-    <>
+    <div className={styles.app}>
       {isLoading && <Loader />}
       {!!images.length && !isLoading && <ImageGallery images={images} />}
-    </>
+    </div>
   );
 };
 

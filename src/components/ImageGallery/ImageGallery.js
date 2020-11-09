@@ -31,26 +31,33 @@ const ImageGallery = ({ images }) => {
   return (
     <>
       {loading && <Loader />}
-      <div className={styles.imagesGallery}>
-        {images.map(({ image_id, src }) => (
-          <div
-            className={styles.imageContainer}
-            key={image_id}
-            onClick={() => loadImageInfo(image_id)}
-          >
-            <img src={src} alt={image_id} />
-          </div>
-        ))}
-      </div>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>test app</h1>
+        <div className={styles.imagesGallery}>
+          {images.map(({ image_id, src }) => (
+            <div
+              className={styles.imageContainer}
+              key={image_id}
+              onClick={() => loadImageInfo(image_id)}
+            >
+              <img src={src} alt={image_id} className={styles.image} />
+            </div>
+          ))}
+        </div>
 
-      {showModal && (
-        <Modal closeModal={closeModal}>
-          <ImageExtended
-            imageSrc={imageExtendedSrc}
-            imageComments={imageExtendedComments}
-          />
-        </Modal>
-      )}
+        {showModal && (
+          <Modal closeModal={closeModal}>
+            <ImageExtended
+              imageSrc={imageExtendedSrc}
+              imageComments={imageExtendedComments}
+              closeModal={closeModal}
+            />
+          </Modal>
+        )}
+        <footer className={styles.footer}>
+          <p className={styles.footerText}>© 2018-2019</p>
+        </footer>
+      </div>
     </>
   );
 };
