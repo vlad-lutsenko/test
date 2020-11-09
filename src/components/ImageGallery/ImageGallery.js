@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import { getImageExtendedInfo } from "../../fetchRequest";
+import {
+  getImageExtendedComments,
+  getImageExtendedSrc,
+} from "../../fetchRequest";
+import ImageExtended from "../ImageExtended/ImageExtended";
 import Modal from "../Modal/Modal";
+import Loader from "../Loader/Loader";
+
 import styles from "./ImageGallery.module.css";
 
 const ImageGallery = ({ images }) => {
-  const [imageExtendeSrc, setImageExtendedSrc] = useState({});
+  const [imageExtendedSrc, setImageExtendedSrc] = useState("");
+  const [imageExtendedComments, setImageExtendedComments] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -13,15 +20,17 @@ const ImageGallery = ({ images }) => {
 
   const loadImageInfo = async (id) => {
     setLoading(true);
-    const response = await getImageExtendedInfo(id);
-    console.log(response.data);
-    setImageExtendedSrc(response.data);
-    setShowModal(true);
+    const source = await getImageExtendedSrc(id);
+    setImageExtendedSrc(source.data.src);
+    const comments = await getImageExtendedComments(id);
+    setImageExtendedComments(comments.data);
+    openModal();
     setLoading(false);
   };
 
   return (
     <>
+      {loading && <Loader />}
       <div className={styles.imagesGallery}>
         {images.map(({ image_id, src }) => (
           <div
@@ -34,7 +43,14 @@ const ImageGallery = ({ images }) => {
         ))}
       </div>
 
-      {showModal && <Modal />}
+      {showModal && (
+        <Modal closeModal={closeModal}>
+          <ImageExtended
+            imageSrc={imageExtendedSrc}
+            imageComments={imageExtendedComments}
+          />
+        </Modal>
+      )}
     </>
   );
 };

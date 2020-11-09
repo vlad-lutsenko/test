@@ -2,13 +2,6 @@ import React, { useEffect } from "react";
 import styles from "./Modal.module.css";
 
 const Modal = ({ closeModal, children }) => {
-  const modalCloseFunc = (e) => {
-    if (e.target.nodeName === "IMG") {
-      return;
-    }
-    closeModal();
-  };
-
   const escCloseModal = (e) => {
     if (e.key !== "Escape") {
       return;
@@ -24,7 +17,7 @@ const Modal = ({ closeModal, children }) => {
   });
 
   return (
-    <div className={styles.Overlay} onClick={modalCloseFunc}>
+    <div className={styles.Overlay}>
       <div className={styles.Modal}>
         <>{children}</>
       </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
+import Loader from "./components/Loader/Loader";
 
 import { getAllImages } from "./fetchRequest";
 
@@ -20,8 +21,8 @@ const App = () => {
 
   return (
     <>
+      {isLoading && <Loader />}
       {!!images.length && !isLoading && <ImageGallery images={images} />}
-      {isLoading && <div>loading...</div>}
     </>
   );
 };
