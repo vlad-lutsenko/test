@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/test/static/css/main.5d9077da.chunk.css",
-    "main.js": "/test/static/js/main.34ff3a3d.chunk.js",
-    "main.js.map": "/test/static/js/main.34ff3a3d.chunk.js.map",
+    "main.css": "/test/static/css/main.0548b7e7.chunk.css",
+    "main.js": "/test/static/js/main.74dc5980.chunk.js",
+    "main.js.map": "/test/static/js/main.74dc5980.chunk.js.map",
     "runtime-main.js": "/test/static/js/runtime-main.5a0883e0.js",
     "runtime-main.js.map": "/test/static/js/runtime-main.5a0883e0.js.map",
     "static/js/2.63757b7f.chunk.js": "/test/static/js/2.63757b7f.chunk.js",
     "static/js/2.63757b7f.chunk.js.map": "/test/static/js/2.63757b7f.chunk.js.map",
     "index.html": "/test/index.html",
-    "static/css/main.5d9077da.chunk.css.map": "/test/static/css/main.5d9077da.chunk.css.map",
+    "static/css/main.0548b7e7.chunk.css.map": "/test/static/css/main.0548b7e7.chunk.css.map",
     "static/js/2.63757b7f.chunk.js.LICENSE.txt": "/test/static/js/2.63757b7f.chunk.js.LICENSE.txt",
     "static/media/ImageGallery.module.css": "/test/static/media/RobotoCondensed-Regular.db6d9169.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.5a0883e0.js",
     "static/js/2.63757b7f.chunk.js",
-    "static/css/main.5d9077da.chunk.css",
-    "static/js/main.34ff3a3d.chunk.js"
+    "static/css/main.0548b7e7.chunk.css",
+    "static/js/main.74dc5980.chunk.js"
   ]
 }
