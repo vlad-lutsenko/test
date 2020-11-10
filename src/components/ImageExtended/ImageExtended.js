@@ -3,17 +3,18 @@ import InputForm from "../InputForm/InputForm";
 import styles from "./ImageExtended.module.css";
 
 const ImageExtended = ({ imageSrc, imageComments, closeModal }) => {
+  console.log(imageComments);
   const [imgId, setImgId] = useState("");
 
   return (
     <div className={styles.modal}>
-      <div className={styles.forMobilePositioning}>
-        <div>
-          <img src={imageSrc} alt="awesome" className={styles.bigImg} />
-        </div>
-        <div className={styles.comments}>
-          <ul className={styles.commentsList}>
-            {imageComments.map((comment) => {
+      <div>
+        <img src={imageSrc} alt="awesome" className={styles.bigImg} />
+      </div>
+      <div className={styles.comments}>
+        <ul className={styles.commentsList}>
+          {!!imageComments.length &&
+            imageComments.map((comment) => {
               const { description, id, name, image_id } = comment;
               if (imgId !== image_id) {
                 setImgId(image_id);
@@ -25,15 +26,17 @@ const ImageExtended = ({ imageSrc, imageComments, closeModal }) => {
                 </li>
               );
             })}
-          </ul>
-        </div>
+          {!imageComments.length && (
+            <li className={styles.commentsListItem}>
+              <p className={styles.description}>Ваш комментарий будет первым</p>
+            </li>
+          )}
+        </ul>
       </div>
-      <div className={styles.forMobilePositioning}>
-        <InputForm imgId={imgId} imageComments={imageComments} />
-        <button className={styles.closeButton} onClick={closeModal}>
-          &#10006;
-        </button>
-      </div>
+      <InputForm imgId={imgId} imageComments={imageComments} />
+      <button className={styles.closeButton} onClick={closeModal}>
+        &#10006;
+      </button>
     </div>
   );
 };

@@ -31,7 +31,7 @@
 }
 
 .commentsList {
-  width: 210px;
+  grid-row-start: 2;
   list-style: none;
 }
 
@@ -96,7 +96,6 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
   .commentsList {
     padding-left: 22px;
