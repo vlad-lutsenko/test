@@ -18,9 +18,7 @@ const Modal = ({ closeModal, children }) => {
 
   return (
     <div className={styles.Overlay}>
-      <div className={styles.Modal}>
-        <>{children}</>
-      </div>
+      <>{children}</>
     </div>
   );
 };

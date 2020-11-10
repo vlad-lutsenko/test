@@ -66,3 +66,27 @@
   text-transform: uppercase;
   color: #cccccc;
 }
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    width: 320px;
+  }
+
+  .noScroll {
+    height: 100vh;
+    overflow-y: hidden;
+  }
+
+  .imagesGallery {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .imageContainer {
+    width: 280px;
+    height: 171px;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+}

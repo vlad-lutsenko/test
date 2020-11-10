@@ -32,3 +32,13 @@
   line-height: 15px;
   color: #ffffff;
 }
+
+@media screen and (max-width: 767px) {
+  .form {
+    text-align: center;
+  }
+  .form input,
+  .submitButton {
+    width: 276px;
+  }
+}

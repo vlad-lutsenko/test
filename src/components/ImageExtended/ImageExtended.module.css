@@ -1,8 +1,6 @@
 .modal {
   position: relative;
   padding: 30px 30px 32px 30px;
-  width: 619px;
-  height: 425px;
   background-color: white;
   display: grid;
   grid-template-columns: 331px 1fr;
@@ -12,18 +10,15 @@
   overflow-y: scroll;
 }
 
-/* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px #999999;
   border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #4997d0;
 
@@ -78,5 +73,33 @@
   font-weight: normal;
   font-size: 13px;
   line-height: 15px;
-  color: #000000;
+  color: hsl(0, 0%, 0%);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 619px;
+    height: 425px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .bigImg {
+    width: 320px;
+    height: 205px;
+    margin-bottom: 25px;
+  }
+
+  .modal {
+    padding: 0 0 48px;
+    width: 320px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .commentsList {
+    padding-left: 22px;
+    margin-bottom: 40px;
+  }
 }
