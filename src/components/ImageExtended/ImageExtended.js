@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import InputForm from "../InputForm/InputForm";
-import styles from "./ImageExtended.module.css";
+import React, { useState } from 'react';
+import InputForm from '../InputForm/InputForm';
+import styles from './ImageExtended.module.css';
 
 const ImageExtended = ({ imageSrc, imageComments, closeModal }) => {
   console.log(imageComments);
-  const [imgId, setImgId] = useState("");
+  const [imgId, setImgId] = useState('');
 
   return (
     <div className={styles.modal}>
       <div>
-        <img src={imageSrc} alt="awesome" className={styles.bigImg} />
+        <img src={imageSrc} alt='awesome' className={styles.bigImg} />
       </div>
       <div className={styles.comments}>
         <ul className={styles.commentsList}>
